@@ -16,6 +16,7 @@ export class LinhaDoTempoComponent implements OnInit {
     private route: ActivatedRoute,
     private cartService: CartService
   ) {
+      console.log(this.cartService.getShippingPrices());
       this.produtos_pra_venda = this.cartService.getShippingPrices();
    }
 
