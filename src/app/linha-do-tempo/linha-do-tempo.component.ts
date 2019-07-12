@@ -10,11 +10,14 @@ import { CartService } from '../cart.service';
 })
 export class LinhaDoTempoComponent implements OnInit {
 
+  produtos_pra_venda;
+  
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService
-  ) { }
-  produtos_pra_venda = produtos;
+  ) {
+      this.produtos_pra_venda = this.cartService.getShippingPrices();
+   }
 
   addToCart(produto) {
     window.alert('Your product has been added to the cart!');
