@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProdutoComponent} from '../produtos/produtos.component'
+import { produtos } from '../produtos';
 
 enum Role {
   Comprador, Vendedor

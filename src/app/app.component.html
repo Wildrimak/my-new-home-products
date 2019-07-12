@@ -1,14 +1,12 @@
+<div class="forma">
+  <a [routerLink]="['/']">
+    <h1>
+      Seja bem vindo {{name}}!
+    </h1>
+  </a>
 
-<a [routerLink]="['/']">
-    <h1>Seja bem vindo {{name}}!</h1>
-</a>
-<p>
-  My-new-home-products! Seu novo jeito de comprar peer-to-peer!
-</p>
-<a [routerLink]="['/produtos']" class="button fancy-button">
-Ver produtos a venda</a>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 
-<div class="container">
-  <router-outlet></router-outlet>
 </div>
-

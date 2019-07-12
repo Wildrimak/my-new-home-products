@@ -1,0 +1,21 @@
+div.borda {
+    height: 50%;
+    background: rgba(214, 248, 160, 0.089);
+    color: rgba(36, 2, 41, 0.918);
+    padding: 2%;
+    margin-bottom: 5%;
+    border: 1px solid rgb(5, 1, 22);
+}
+
+.centralize {
+  text-align: center;
+}
+
+.finalize {
+  text-align: end;
+}
+
+.left-bold {
+  text-align: left;
+  font-weight: bold;
+}
