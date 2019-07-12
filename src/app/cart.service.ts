@@ -29,7 +29,7 @@ export class CartService {
   }
 
   getShippingPrices() {
-    return this.http.get('http://www.mocky.io/v2/5d28c9d32c00005d693edc1c');
+    return this.http.get('http://www.mocky.io/v2/5d28ce9c2c000066003edc43');
   }
 
 }
