@@ -1,24 +1,22 @@
 <h2 class="ajust">Produtos a venda</h2>
 
-<div class="borda centralize" *ngFor="let produto of produtos_pra_venda;">
+<div class="produto" *ngFor="let produto of produtos_pra_venda;">
 
-  <h3>
-    <p [title]="produto.nome">
-      {{ produto.nome }}
-    </p>
-  </h3>
-
-  <div [title]="produto.preco">
-    <div class="left-bold"> Preço:</div>
-    <div class="finalize">{{produto.preco | currency}}</div>
+	<div class="imagem">
+    <img src="{{produto.imagem}}" alt="{{produto.descricao}}">
   </div>
-
-  <div *ngIf="produto.descricao">
-    Descrição: {{ produto.descricao }}
+  <div>
+    <div class="line" [title]="produto.nome">
+        <p> Nome: <i>{{ produto.nome }}</i></p>
+    </div>
+    <div class="line" [title]="produto.preco">
+      <p> Preço: <i>{{produto.preco | currency}}</i></p>
+    </div>
+    <div class="line" *ngIf="produto.descricao">
+      <p> Descrição: <i>{{ produto.descricao }}</i></p>
+    </div>
+    <div class="line" [title]="produto.usuario">
+      <p> Vendedor: <i>{{produto.usuario.nome}}</i></p>
+    </div>
   </div>
-
-  <div [title]="produto.usuario">
-    Vendedor: {{produto.usuario.nome}}
-  </div>
-
 </div>

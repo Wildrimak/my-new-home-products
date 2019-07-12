@@ -1,21 +1,27 @@
-div.borda {
-    height: 50%;
-    background: rgba(214, 248, 160, 0.089);
+div.produto {
+    background: rgba(195, 221, 152, 0.363);
     color: rgba(36, 2, 41, 0.918);
     padding: 2%;
     margin-bottom: 5%;
     border: 1px solid rgb(5, 1, 22);
 }
 
-.centralize {
+div.imagem {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+
+div.line {
   text-align: center;
 }
 
-.finalize {
+div.line i {
   text-align: end;
 }
 
-.left-bold {
+div.line p{
   text-align: left;
   font-weight: bold;
+  color: blue;
 }
