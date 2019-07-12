@@ -30,7 +30,10 @@ export class CartService {
 
   getShippingPrices() {
     var url: string = 'http://www.mocky.io/v2/5d28dd972c0000cf2f3edc88';
-    return this.http.get(url);
+    
+     this.http.get(url).subscribe(res => {
+     window.alert(res); 
+  });
   }
 
 }
