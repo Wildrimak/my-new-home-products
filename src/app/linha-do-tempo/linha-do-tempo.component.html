@@ -1,23 +1,24 @@
 <h2 class="ajust">Produtos a venda</h2>
 
 <div class="produto" *ngFor="let produto of produtos_pra_venda;">
-
-	<div class="imagem">
-    <img src="{{produto.imagem}}" alt="{{produto.descricao}}">
+  <div class="info">
+    <div class="imagem">
+      <img class="img-responsive" src="{{produto.imagem}}" alt="{{produto.descricao}}">
+    </div>
+    <div class="right">
+      <div class="line" [title]="produto.nome">
+          <p> Nome: <i>{{ produto.nome }}</i></p>
+      </div>
+      <div class="line" [title]="produto.preco">
+        <p> Preço: <i>{{produto.preco | currency}}</i></p>
+      </div>
+      <div class="line" *ngIf="produto.descricao">
+        <p> Descrição: <i>{{ produto.descricao }}</i></p>
+      </div>
+      <div class="line" [title]="produto.usuario">
+        <p> Vendedor: <i>{{produto.usuario.nome}}</i></p>
+      </div>
+    </div>
   </div>
-  <div>
-    <div class="line" [title]="produto.nome">
-        <p> Nome: <i>{{ produto.nome }}</i></p>
-    </div>
-    <div class="line" [title]="produto.preco">
-      <p> Preço: <i>{{produto.preco | currency}}</i></p>
-    </div>
-    <div class="line" *ngIf="produto.descricao">
-      <p> Descrição: <i>{{ produto.descricao }}</i></p>
-    </div>
-    <div class="line" [title]="produto.usuario">
-      <p> Vendedor: <i>{{produto.usuario.nome}}</i></p>
-    </div>
-    <button (click)="addToCart(produto)">Comprar</button>
-  </div>
+  <button (click)="addToCart(produto)">Comprar</button>
 </div>
