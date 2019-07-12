@@ -27,13 +27,5 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-
-  getShippingPrices() {
-    var url: string = 'http://www.mocky.io/v2/5d28dd972c0000cf2f3edc88';
-    
-     this.http.get(url).subscribe(res => {
-     window.alert(res); 
-  });
-  }
-
+  
 }

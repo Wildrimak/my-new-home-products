@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { produtos } from '../produtos';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
+import { HttpClient } from '@angular/common/http';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-linha-do-tempo',
@@ -10,13 +12,14 @@ import { CartService } from '../cart.service';
 })
 export class LinhaDoTempoComponent implements OnInit {
 
-  produtos_pra_venda;
+  produtos_pra_venda: any[] = [];
   
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private http: HttpClient
   ) {
-      this.produtos_pra_venda = this.cartService.getShippingPrices();
+      this.produtos_pra_venda = this.cartService.getItems();
    }
 
   addToCart(produto) {
@@ -25,6 +28,10 @@ export class LinhaDoTempoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.http.get('https://www.mocky.io/v2/5d28f6c62c0000cd2f3edce3')
+      .subscribe(data => {
+        this.produtos_pra_venda = data['results'];
+      });
   }
 
 }
