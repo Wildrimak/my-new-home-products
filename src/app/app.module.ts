@@ -10,6 +10,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ProdutoComponent } from './produtos/produtos.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { LinhaDoTempoComponent } from './linha-do-tempo/linha-do-tempo.component';
+import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [ 
@@ -20,7 +22,8 @@ import { LinhaDoTempoComponent } from './linha-do-tempo/linha-do-tempo.component
       {path: '', component: LinhaDoTempoComponent},
       {path: 'produtos', component: ProdutoComponent},
       {path: 'usuarios', component: UsuarioComponent},
-      {path: 'pedidos', component: PedidoComponent}
+      {path: 'pedidos', component: PedidoComponent},
+      { path: 'cart', component: CartComponent}
     ])
   ],
   declarations: [ 
@@ -29,8 +32,10 @@ import { LinhaDoTempoComponent } from './linha-do-tempo/linha-do-tempo.component
     UsuarioComponent,
     ProdutoComponent,
     PedidoComponent,
-    LinhaDoTempoComponent 
+    LinhaDoTempoComponent,
+    CartComponent 
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [CartService]
 })
 export class AppModule { }

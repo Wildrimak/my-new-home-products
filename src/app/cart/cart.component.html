@@ -1,6 +1,6 @@
-<h2 class="ajust">Produtos a venda</h2>
+<h3>Itens comprados</h3>
 
-<div class="produto" *ngFor="let produto of produtos_pra_venda;">
+<div class="produto" *ngFor="let produto of items">
 
 	<div class="imagem">
     <img src="{{produto.imagem}}" alt="{{produto.descricao}}">
@@ -18,6 +18,5 @@
     <div class="line" [title]="produto.usuario">
       <p> Vendedor: <i>{{produto.usuario.nome}}</i></p>
     </div>
-    <button (click)="addToCart(product)">Comprar</button>
   </div>
 </div>
